@@ -1,4 +1,4 @@
-﻿namespace CangguEvents.TelegramBot.Webhook.Configurations
+﻿namespace CangguEvents.TelegramBot.Application
 {
     public class BotConfiguration
     {

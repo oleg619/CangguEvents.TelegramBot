@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Autofac;
 using AutoMapper;
-using CangguEvents.TelegramBot.Webhook.Configurations;
+using CangguEvents.TelegramBot.Application;
 using MihaZupan;
 using Telegram.Bot;
 

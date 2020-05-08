@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using CangguEvents.TelegramBot.Webhook.Configurations;
+using CangguEvents.TelegramBot.Application;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Telegram.Bot;

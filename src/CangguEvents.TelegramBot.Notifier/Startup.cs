@@ -1,9 +1,12 @@
 ﻿using Autofac;
 using CangguEvents.MongoDb;
+using CangguEvents.TelegramBot.Application;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MihaZupan;
+using Telegram.Bot;
 
 namespace CangguEvents.TelegramBot.Notifier
 {
@@ -27,6 +30,7 @@ namespace CangguEvents.TelegramBot.Notifier
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHostedService<Worker>();
             services.AddMongo();
         }
 
@@ -42,6 +46,27 @@ namespace CangguEvents.TelegramBot.Notifier
         // Don't build the container; that gets done for you by the factory.
         public void ConfigureContainer(ContainerBuilder builder)
         {
+            builder.RegisterTelegram(GetBotConfiguration());
+        }
+        
+        private BotConfiguration GetBotConfiguration()
+        {
+            var config = new BotConfiguration();
+
+            Configuration.GetSection("BotConfiguration").Bind(config);
+            return config;
+        }
+    }
+
+    public static class Ext
+    {
+        public static void RegisterTelegram(this ContainerBuilder builder, BotConfiguration config)
+        {
+            var client = string.IsNullOrEmpty(config.Socks5Host)
+                ? new TelegramBotClient(config.BotToken)
+                : new TelegramBotClient(config.BotToken, new HttpToSocks5Proxy(config.Socks5Host, config.Socks5Port));
+
+            builder.RegisterInstance(client).AsImplementedInterfaces().SingleInstance();
         }
     }
 }

@@ -38,6 +38,9 @@
     <ItemGroup Condition="'$(Configuration)' == 'Release'">
         <PackageReference Include="CangguEvents.MongoDb" Version="0.1.2" />
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Configurations" />
+    </ItemGroup>
     
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <CodeAnalysisRuleSet>null.ruleset</CodeAnalysisRuleSet>

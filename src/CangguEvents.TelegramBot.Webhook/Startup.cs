@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 using Autofac;
 using CangguEvents.MongoDb;
+using CangguEvents.TelegramBot.Application;
 using CangguEvents.TelegramBot.Application.Models.Commands;
 using CangguEvents.TelegramBot.Application.Services;
-using CangguEvents.TelegramBot.Webhook.Configurations;
 using CangguEvents.TelegramBot.Webhook.Helpers;
 using CangguEvents.TelegramBot.Webhook.Middleware;
 using MediatR;
