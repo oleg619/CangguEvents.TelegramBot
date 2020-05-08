@@ -24,7 +24,7 @@ namespace CangguEvents.TelegramBot.Application.Mediatr.Handlers
         public async Task<IReadOnlyCollection<ITelegramResponse>> Handle(StartCommand request,
             CancellationToken cancellationToken)
         {
-            var userState = new UserState(true, true);
+            var userState = new UserState(true, true, request.UserId);
 
             await _stateRepository.CreateUser(request.UserId, userState, cancellationToken);
 

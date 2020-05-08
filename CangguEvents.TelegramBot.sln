@@ -6,6 +6,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CangguEvents.TelegramBot.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CangguEvents.TelegramBot.Webhook", "src\CangguEvents.TelegramBot.Webhook\CangguEvents.TelegramBot.Webhook.csproj", "{E321AC2D-EFF4-4430-99BA-467B2A8E0D63}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{079A45B8-5723-4F76-B207-DFC4CAE01F84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CangguEvents.IntegrationTests", "tests\CangguEvents.IntegrationTests\CangguEvents.IntegrationTests.csproj", "{84869D2C-AE96-4E41-B4E9-E45B55F48333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CangguEvents.UnitTests", "tests\CangguEvents.UnitTests\CangguEvents.UnitTests.csproj", "{CDA3207C-2BED-4DD7-8CDC-9CD0BBE4CB76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +26,19 @@ Global
 		{E321AC2D-EFF4-4430-99BA-467B2A8E0D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E321AC2D-EFF4-4430-99BA-467B2A8E0D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E321AC2D-EFF4-4430-99BA-467B2A8E0D63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84869D2C-AE96-4E41-B4E9-E45B55F48333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84869D2C-AE96-4E41-B4E9-E45B55F48333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84869D2C-AE96-4E41-B4E9-E45B55F48333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84869D2C-AE96-4E41-B4E9-E45B55F48333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDA3207C-2BED-4DD7-8CDC-9CD0BBE4CB76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA3207C-2BED-4DD7-8CDC-9CD0BBE4CB76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA3207C-2BED-4DD7-8CDC-9CD0BBE4CB76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA3207C-2BED-4DD7-8CDC-9CD0BBE4CB76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DC897794-2575-41AD-AD65-4273B347814E} = {C0206C65-D078-4CB6-919A-67660FEA40B6}
 		{E321AC2D-EFF4-4430-99BA-467B2A8E0D63} = {C0206C65-D078-4CB6-919A-67660FEA40B6}
+		{84869D2C-AE96-4E41-B4E9-E45B55F48333} = {079A45B8-5723-4F76-B207-DFC4CAE01F84}
+		{CDA3207C-2BED-4DD7-8CDC-9CD0BBE4CB76} = {079A45B8-5723-4F76-B207-DFC4CAE01F84}
 	EndGlobalSection
 EndGlobal

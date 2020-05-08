@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+        <ProjectReference Include="..\..\..\CangguEvents.Admin\src\CangguEvents.Admin.Application\CangguEvents.Admin.Application.csproj" />
+        <ProjectReference Include="..\CangguEvents.TelegramBot.Application\CangguEvents.TelegramBot.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+        <ProjectReference Include="..\..\..\CangguEvents.Domain\src\CangguEvents.Domain\CangguEvents.Domain.csproj" />
+        <ProjectReference Include="..\..\..\CangguEvents.MongoDb\src\CangguEvents.MongoDb\CangguEvents.MongoDb.csproj" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(Configuration)' == 'Release'">
+        <PackageReference Include="CangguEvents.Domain" Version="1.0.37" />
+        <PackageReference Include="CangguEvents.MongoDb" Version="0.1.2" />
+    </ItemGroup>
+
+</Project>

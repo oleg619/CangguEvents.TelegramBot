@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "CangguEvents.TelegramBot.Notifier": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT ": "Development"
+      }
+    }
+  }
+}

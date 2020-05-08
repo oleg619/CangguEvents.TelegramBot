@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "CangguEvents.TelegramBot.EvenrsSender": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

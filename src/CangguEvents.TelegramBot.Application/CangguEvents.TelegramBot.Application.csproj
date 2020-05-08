@@ -16,7 +16,7 @@
         <ProjectReference Include="..\..\..\CangguEvents.Domain\src\CangguEvents.Domain\CangguEvents.Domain.csproj" />
     </ItemGroup>
     <ItemGroup Condition="'$(Configuration)' == 'Release'">
-        <PackageReference Include="CangguEvents.Domain" Version="1.0.0" />
+        <PackageReference Include="CangguEvents.Domain" Version="1.0.37" />
     </ItemGroup>
 
 </Project>

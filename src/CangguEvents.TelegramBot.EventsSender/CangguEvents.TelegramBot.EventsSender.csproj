@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp5.0</TargetFramework>
+        <UserSecretsId>dotnet-CangguEvents.TelegramBot.EvenrsSender-9FD75EEB-6830-439C-80F1-34D8210C9CC7</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0-preview.1.20120.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\CangguEvents.RabbitMq\CangguEvents.RabbitMq.csproj" />
+    </ItemGroup>
+</Project>

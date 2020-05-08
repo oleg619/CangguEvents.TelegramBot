@@ -1,0 +1,13 @@
+2020-04-12 13:36:51.480 +03:00 [DBG] Hosting starting
+2020-04-12 13:36:51.759 +03:00 [DBG] Failed to locate the development https certificate at 'null'.
+2020-04-12 13:36:51.791 +03:00 [INF] Now listening on: http://localhost:8443
+2020-04-12 13:36:51.792 +03:00 [DBG] Loaded hosting startup assembly CangguEvents.TelegramBot.Webhook
+2020-04-12 13:36:52.313 +03:00 [INF] Start webhook with https://canggueventsasp1.azurewebsites.net/api/telegram/update 1093369186:AAFMPKqDmS2uH2OGpFgCZFmsCqpaPclIKIw
+2020-04-12 13:36:52.388 +03:00 [INF] End set webhook
+2020-04-12 13:36:52.388 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-04-12 13:36:52.388 +03:00 [INF] Hosting environment: Production
+2020-04-12 13:36:52.389 +03:00 [INF] Content root path: C:\Projects\Pet\CangguEvents\CangguEvents.TelegramBot\src\CangguEvents.TelegramBot.Webhook
+2020-04-12 13:36:52.389 +03:00 [DBG] Hosting started
+2020-04-12 13:36:53.727 +03:00 [INF] Application is shutting down...
+2020-04-12 13:36:53.729 +03:00 [DBG] Hosting stopping
+2020-04-12 13:36:53.778 +03:00 [DBG] Hosting stopped

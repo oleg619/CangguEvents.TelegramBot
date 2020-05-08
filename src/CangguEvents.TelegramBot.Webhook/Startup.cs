@@ -29,8 +29,6 @@ namespace CangguEvents.TelegramBot.Webhook
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvcCore(options => { options.Filters.Add(typeof(ValidateModelFilter)); });
-
             services.AddControllers()
                 .AddApplicationPart(typeof(Startup).Assembly)
                 .AddNewtonsoftJson(options => options.SerializerSettings.Formatting = Formatting.Indented);
@@ -40,7 +38,6 @@ namespace CangguEvents.TelegramBot.Webhook
             services.AddInfrastructure();
             
             services.AddControllers();
-
 
             services.AddRouting(options => options.LowercaseUrls = true);
         }
@@ -68,7 +65,6 @@ namespace CangguEvents.TelegramBot.Webhook
             var config = GetBotConfiguration();
             ConfigureTelegram(builder, config);
             builder.RegisterAutomapper();
-
             builder.RegisterType<TelegramMessengerSender>().AsSelf().AsImplementedInterfaces();
             builder.RegisterType<TelegramMessageHandler>().AsSelf().AsImplementedInterfaces();
             builder.RegisterType<MessageParser>().AsSelf();

@@ -1,25 +1,32 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using CangguEvents.TelegramBot.Application.Models.Responses;
 using MediatR;
 using Serilog;
+using Telegram.Bot;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types.InlineQueryResults;
 
 namespace CangguEvents.TelegramBot.Application.Services
 {
     public class TelegramMessageHandler
     {
+        private readonly ITelegramBotClient _telegramService;
         private readonly MessageParser _messageParser;
         private readonly IMediator _mediator;
         private readonly IMessengerSender _sender;
         private readonly ILogger _logger;
 
         public TelegramMessageHandler(
+            ITelegramBotClient telegramService,
             MessageParser messageParser,
             IMediator mediator,
             IMessengerSender sender,
             ILogger logger)
         {
+            _telegramService = telegramService;
             _messageParser = messageParser;
             _sender = sender;
             _logger = logger;

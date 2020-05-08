@@ -1,6 +1,6 @@
 ﻿using Autofac;
-using CangguEvents.Asp;
-using CangguEvents.Asp.Configurations;
+using CangguEvents.TelegramBot.Webhook;
+using CangguEvents.TelegramBot.Webhook.Configurations;
 using Microsoft.Extensions.Configuration;
 using NSubstitute;
 using Telegram.Bot;
