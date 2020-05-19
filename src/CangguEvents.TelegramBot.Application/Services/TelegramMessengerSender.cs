@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 using CangguEvents.TelegramBot.Application.Models.Responses;
-using Serilog;
+using Microsoft.Extensions.Logging;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types.Enums;
@@ -12,10 +12,10 @@ namespace CangguEvents.TelegramBot.Application.Services
     public class TelegramMessengerSender : IMessengerSender
     {
         private readonly ITelegramBotClient _telegramService;
-        private readonly ILogger _logger;
+        private readonly ILogger<TelegramMessengerSender> _logger;
         private const ParseMode ParseModeMessage = ParseMode.Markdown;
 
-        public TelegramMessengerSender(ITelegramBotClient telegramService, ILogger logger)
+        public TelegramMessengerSender(ITelegramBotClient telegramService, ILogger<TelegramMessengerSender> logger)
         {
             _telegramService = telegramService;
             _logger = logger;
@@ -59,7 +59,7 @@ namespace CangguEvents.TelegramBot.Application.Services
             }
             catch (InvalidParameterException e)
             {
-                _logger.Warning(e, "Should to do it");
+                _logger.LogWarning(e, "Should to do it");
             }
         }
     }

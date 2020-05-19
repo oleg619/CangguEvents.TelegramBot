@@ -1,32 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using CangguEvents.TelegramBot.Application.Models.Responses;
 using MediatR;
-using Serilog;
-using Telegram.Bot;
+using Microsoft.Extensions.Logging;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineQueryResults;
 
 namespace CangguEvents.TelegramBot.Application.Services
 {
     public class TelegramMessageHandler
     {
-        private readonly ITelegramBotClient _telegramService;
         private readonly MessageParser _messageParser;
         private readonly IMediator _mediator;
         private readonly IMessengerSender _sender;
-        private readonly ILogger _logger;
+        private readonly ILogger<TelegramMessageHandler> _logger;
 
         public TelegramMessageHandler(
-            ITelegramBotClient telegramService,
             MessageParser messageParser,
             IMediator mediator,
             IMessengerSender sender,
-            ILogger logger)
+            ILogger<TelegramMessageHandler> logger)
         {
-            _telegramService = telegramService;
             _messageParser = messageParser;
             _sender = sender;
             _logger = logger;
@@ -37,12 +30,12 @@ namespace CangguEvents.TelegramBot.Application.Services
         {
             var (command, (userId, messageId, callbackQueryId)) = _messageParser.ParseMessage(update);
 
-            _logger.Information("Parse {message} to {command}", update, command);
+            _logger.LogInformation("Parse {message} to {command}", update, command);
             var responses = await _mediator.Send(command);
 
             foreach (var telegramResponse in EnumerateTelegramResponses(responses, callbackQueryId))
             {
-                _logger.Information("Send {message}", telegramResponse);
+                _logger.LogInformation("Send {message}", telegramResponse);
                 await _sender.Send(telegramResponse, userId, messageId);
             }
         }

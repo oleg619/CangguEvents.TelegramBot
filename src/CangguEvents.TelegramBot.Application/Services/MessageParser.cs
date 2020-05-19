@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using CangguEvents.TelegramBot.Application.Models;
 using CangguEvents.TelegramBot.Application.Models.Commands;
-using Serilog;
+using Microsoft.Extensions.Logging;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
@@ -12,9 +12,9 @@ namespace CangguEvents.TelegramBot.Application.Services
 {
     public class MessageParser
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<MessageParser> _logger;
 
-        public MessageParser(ILogger logger)
+        public MessageParser(ILogger<MessageParser> logger)
         {
             _logger = logger;
         }
@@ -86,7 +86,7 @@ namespace CangguEvents.TelegramBot.Application.Services
                 return func(chatId);
             }
 
-            _logger.Warning("Cannot parse {message} from {userId}", message, chatId);
+            _logger.LogWarning("Cannot parse {message} from {userId}", message, chatId);
             return new UnknownCommand(chatId);
         }
 
